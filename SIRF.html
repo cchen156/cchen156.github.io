@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chen Chen</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+		
+<!-- 		
+		<div class="row">
+			<nav id="nav">		
+					<a href="index.html">Top</a>
+					<a href="Experience.html">Work</a>
+					<a href="#portfolio">Portfolio</a>
+					<a href="#contact">Contact</a>
+			</nav>
+		</div> 
+-->
+
+
+
+		<!-- Work -->
+			<div class="wrapper style2">	
+			
+			
+				<div class="container" style="width:1200px">		
+					<h1>SIRF</h1>
+					<p><strong><a href="http://cchen156.web.engr.illinois.edu">Chen Chen</a>,   
+					  Yeqing Li,
+					  Wei Liu,
+					  and <a href="http://ranger.uta.edu/~huang/">Junzhou Huang</a>  </strong></p>
+					<p>Simultaneous Image Registration and Fusion in A Unified Framework. <strong><a href="code/CODE_SIRF.zip">[MATLAB code]</a></strong></p>
+					
+					<div id="Abstract">
+					<h3 align="left">Abstract</h3>
+					<p align="left">In this paper, we propose a novel method for image fusion with a high-resolution panchromatic image and a low-resolution multispectral image at the same geographical location. The fusion is formulated as a convex optimization problem which minimizes a linear combination of a least-squares fitting term and a dynamic gradient sparsity regularizer. The former is to preserve accurate spectral information of the multispectral image, while the latter is to keep sharp edges of the high-resolution panchromatic image. We further propose to simultaneously register the two images during the fusing process, which is naturally achieved by virtue of the dynamic gradient sparsity property. An efficient algorithm is then devised to solve the optimization problem, accomplishing a linear computational complexity in the size of the output image in each iteration. We compare our method against seven state-of-the-art image fusion methods on multispectral image datasets from four satellites. Extensive experimental results demonstrate that the proposed method substantially outperforms the others in terms of both spatial and spectral qualities. We also show that our method can provide high-quality products from coarsely registered real-world datasets.
+					</p>
+					</div>
+										
+					
+					
+					<div id="Results">
+				
+							<h3 align="left">Simultaneous Image Registration and Fusion</h3>
+							<p align="left">
+							Our method can achieve simultaneous image registration and fusion with one energy function, which avoids the results to be sub-optimal. It is stable and robust, even when there exist pre-registration errors. These are the fusion results on a portion of the IKONOS China-Sichuan 58208 0000000.20001108 dataset:
+							</p>
+																	
+							<img src="researchimages/sichuan.png" alt="" />  <br>
+							<img src="researchimages/SIRF2.png" alt="" height="375px" width="450px"/>  <br>
+														
+							<p align="left"><strong>Reference:</strong> <br>
+							[1] Chen Chen, Yeqing Li, Junzhou Huang and Wei Liu, "Image Fusion with Local Spectral Consistency and Dynamic Gradient Sparsity", IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014.<br>
+													
+							[2] Chen Chen, Yeqing Li, Wei Liu and Junzhou Huang, "SIRF: Simultaneous Satellite Image Registration and Fusion in a Unified Framework", IEEE Transactions on Image Processing (TIP), Volume:24, Issue: 11, pp. 4213 - 4224, 2015.<br></p>
+						
+					</div>
+										
+				</div>
+			</div>
+
+	
+
+	</body>
+</html>

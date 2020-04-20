@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chen Chen</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+<!-- 	
+		<div class="row">
+			<nav id="nav">		
+					<a href="index.html">Top</a>
+					<a href="Experience.html">Work</a>
+					<a href="#portfolio">Portfolio</a>
+					<a href="#contact">Contact</a>
+			</nav>
+		</div> 
+-->
+
+
+
+		<!-- Work -->
+			<div class="wrapper style2">	
+				<div class="container" style="width:1200px">		
+					<h1>FIRLS</h1>			
+					<p><strong><a href="http://cchen156.web.engr.illinois.edu">Chen Chen</a>,   
+					  <a href="http://ranger.uta.edu/~huang/">Junzhou Huang</a>,   
+					  Lei He
+					  and Hongsheng Li</strong></p>
+					
+					<p>Fast Iteratively Reweighted Least Squares Algorithms for Analysis-Based Sparsity Learning. <strong><a href="code/FIRLS.zip">[MATLAB code]</a></strong></p>
+
+					
+					<div id="Abstract">
+					<h3 align="left">Abstract</h3>
+					<p align="left">In this work, we propose a novel method for analysis-based sparsity reconstruction. It can solve the generalized
+					problem by structured sparsity regularization with an orthogonal basis and total variation regularization. The proposed algorithm
+					is based on the iterative reweighted least squares (IRLS) model, which is further accelerated by the preconditioned conjugate
+					gradient method. The convergence rate of the proposed algorithm is almost the same as that of the traditional IRLS algorithms,
+					that is, exponentially fast. Moreover, with the specifically devised preconditioner, the computational cost for each iteration is
+					significantly less than that of traditional IRLS algorithms, which enables our approach to handle large scale problems. In addition
+					to the fast convergence, it is straightforward to apply our method to standard sparsity, group sparsity, overlapping group sparsity
+					and TV based problems. Experiments are conducted on a practical application: compressive sensing magnetic resonance
+					imaging. Extensive results demonstrate that the proposed algorithm achieves superior performance over 14 state-of-the-art
+					algorithms in terms of both accuracy and computational cost.
+					</p>
+					</div>
+										
+					<div id="Problem">
+				
+							<h3 align="left">Problem</h3>
+							<p align="left">
+							FIRLS solves the following analysis-based sparsity regularization problems:</p>
+							min (1/2)||Ax - b||<span style="vertical-align: sub">2</span><span style="vertical-align: super">2</span> + &lambda;||&Psi; x||<span style="vertical-align: sub">2,1</span> <br>
+							<p align="left">
+							where A is an m-by-n matrix with m << n, b is the measurement vector, &Psi; is a sparsifying basis,
+							the solution x (or its representation &Psi;x) is supposed to be (approximately) sparse. </p>
+					</div>
+					
+					<div id="Examples">		
+
+							<h3 align="left">Examples</h3>
+							<p align="left">
+							Here are some examples:
+							<table border="0" style="width:800px">
+							  <tr>
+								<td align="left">Standard Sparsity</td>
+								<td align="left">min (1/2)||Ax - b||<span style="vertical-align: sub">2</span><span style="vertical-align: super">2</span> + &lambda;||&Phi; x||<span style="vertical-align: sub">1</span></td>
+							  </tr>
+							  <tr>
+								<td align="left">Non-overlapping Group Sparsity</td>
+								<td align="left">min (1/2)||Ax - b||<span style="vertical-align: sub">2</span><span style="vertical-align: super">2</span> + &lambda;||&Phi; x||<span style="vertical-align: sub">2,1</span></td>
+							  </tr>
+							  <tr>
+								<td align="left">Overlapping Group Sparsity</td>
+								<td align="left">min (1/2)||Ax - b||<span style="vertical-align: sub">2</span><span style="vertical-align: super">2</span> + &lambda;||G &Phi; x||<span style="vertical-align: sub">2,1</span></td>
+							 </tr>
+							 <tr>
+								<td align="left">Total Variation</td>
+								<td align="left">min (1/2)||Ax - b||<span style="vertical-align: sub">2</span><span style="vertical-align: super">2</span> + &lambda;||D<span style="vertical-align: sub">1</span> x||<span style="vertical-align: sub">1</span> + &lambda;||D<span style="vertical-align: sub">2</span> x||<span style="vertical-align: sub">1</span></td>
+							  </tr>
+							  <tr>
+								<td align="left"></td>
+								<td align="left">min (1/2)||Ax - b||<span style="vertical-align: sub">2</span><span style="vertical-align: super">2</span> + &lambda;||D<span style="vertical-align: sub">1</span> x, D<span style="vertical-align: sub">2</span> x||<span style="vertical-align: sub">2,1</span></td>
+							  </tr>
+							<tr>
+								<td align="left">Joint Total Variation</td>
+								<td align="left">min (1/2)||AX - B||<span style="vertical-align: sub">2</span><span style="vertical-align: super">2</span> + &lambda;||D<span style="vertical-align: sub">1</span> X, D<span style="vertical-align: sub">2</span> X||<span style="vertical-align: sub">2,1</span></td>
+							  </tr>
+							</table>
+							</p>
+							
+							
+						
+					</div>
+					
+					<div id="Preconditioning">
+				
+							<h3 align="left">Preconditioning</h3>
+							<p align="left">
+							Compared with existing Iteratively Reweighted Least Squares (IRLS) Algorithms, our algorithms are accelerated with preconditioning. When the system matrix has a diagonally-dominate structure (e.g., in CSMRI, compressive sensing, image inpainting), our preconditioning can significantly reduce the computational cost. 
+							
+							</p>
+							
+
+							
+							
+							
+							<img src="researchimages/PCG.png" alt="" height="256px" width="300px"/>  <br>
+														
+							<p align="left"><strong>Reference:</strong> <br>
+							[1] Chen Chen, Junzhou Huang, Lei He and Hongsheng Li, "Preconditioning for Accelerated Iteratively Reweighted Least Squares in Structured Sparsity Reconstruction", IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014.<br>
+													
+							[2] Chen Chen, Junzhou Huang, Lei He and Hongsheng Li, ""Fast Iteratively Reweighted Least Squares Algorithms for Analysis-Based Sparsity Reconstruction", Medical Image Analysis, Volume 49, pp. 141-
+152, 2018. <br></p>
+						
+					</div>
+										
+				</div>
+			</div>
+
+	
+
+	</body>
+</html>

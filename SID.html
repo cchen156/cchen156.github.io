@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SID</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+
+		<!-- Work -->
+			<div class="wrapper style2">	
+        <div class="container" style="width:1200px">		
+					<h1>Learning to See in the Dark</h1>
+          <p><strong><a href="http://cchen156.web.engr.illinois.edu">Chen Chen</a>,   
+          <a href="http://cqf.io/">Qifeng Chen</a>,   
+          <a href="http://pages.cs.wisc.edu/~jiaxu/">Jia Xu</a>  
+          and <a href="http://vladlen.info">Vladlen Koltun</a></strong></p>
+          <p><strong> IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018</strong></p>
+
+          <img src="SID/figures/fig1.png" alt="" width="1200px">  <br>
+          <p><strong>Figure. Extreme low-light imaging by a Sony a7S II camera using ISO 8000, f/5.6, 1/30 second. Dark indoor environment. The illuminance at the camera is <0.1 lux. </strong></p>
+          
+          <div id="Video">
+          <h3 align="left">Video</h3>
+          <iframe width="960" height="540" src="https://www.youtube.com/embed/qWKUFK7MWvg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <p align="center"><strong><a href="SID/CVPR_demo.mp4">[Download]</a></strong></p>
+          
+          <iframe width="960" height="540" src="https://www.youtube.com/embed/bcZFQ3f26pA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <p align="center"><strong>Two minute papers by Karoly Zsolnai-Feher</a></strong></p>
+          </div>
+          
+					<div id="Abstract">
+					<h3 align="left">Abstract</h3>
+					<p align="left"><strong>Imaging in low light is challenging due to low photon count and low SNR. Short-exposure images suffer from noise, while long exposure can lead to blurry images and is often impractical. A variety of denoising, deblurring, and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure night-time images, with corresponding long-exposure reference images. Using the presented dataset, we develop a pipeline for processing low-light images, based on end-to-end training of a fully-convolutional network. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. We report promising results on the new dataset, analyze factors that affect performance, and highlight opportunities for future work.</strong></p></div>
+															
+					<div id="Materials">
+					<h3 align="left">Code and dataset</h3>        
+          <p align="left"><strong>Please check the <a href="https://github.com/cchen156/Learning-to-See-in-the-Dark.git">[Github page]</a> for instructions.</strong></p>
+          </div>
+          
+          <div id="Materials">
+					<h3 align="left">Paper</h3>        
+          <p align="left"><strong><a href="https://arxiv.org/abs/1805.01934">[arXiv]</a></strong></p>
+          </div>
+
+					<div id="High resolution results">
+					<h3 align="left">High resolution results (Click for details. Drag the slider bar.)</h3>            
+          </div>
+          <p align="left"><strong>Compare with the traditional pipeline</strong></p>      
+					<div class="container" style="width:1200px">
+						<div class="row">
+						    <div class="2u">
+									<a href="SID/examples/6s.html" class="image featured"><img src="SID/figures/6s_ours_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+
+						    <div class="2u">
+									<a href="SID/examples/106.html" class="image featured"><img src="SID/figures/10106_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/82.html" class="image featured"><img src="SID/figures/10082_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/105.html" class="image featured"><img src="SID/figures/10105_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/16.html" class="image featured"><img src="SID/figures/10016_00_250_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/167.html" class="image featured"><img src="SID/figures/10167_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/book.html" class="image featured"><img src="SID/figures/30014_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/213.html" class="image featured"><img src="SID/figures/10213_00_100_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/203.html" class="image featured"><img src="SID/figures/10203_00_250_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/199.html" class="image featured"><img src="SID/figures/10199_00_250_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/68.html" class="image featured"><img src="SID/figures/10068_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/29.html" class="image featured"><img src="SID/figures/10029_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/27.html" class="image featured"><img src="SID/figures/10027_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/125.html" class="image featured"><img src="SID/figures/10125_00_100_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/40.html" class="image featured"><img src="SID/figures/10040_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/49.html" class="image featured"><img src="SID/figures/10049_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/155.html" class="image featured"><img src="SID/figures/10155_00_100_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						    <div class="2u">
+									<a href="SID/examples/174.html" class="image featured"><img src="SID/figures/10174_00_100_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+					</div>		
+				</div>
+
+          <p align="left"><strong>Compare with the traditional pipeline followed by BM3D</strong></p>      
+					<div class="container" style="width:1200px">
+						<div class="row">
+						  <div class="2u">
+									<a href="SID/examples/11_BM3D.html" class="image featured"><img src="SID/figures/10011_00_100_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						  <div class="2u">
+									<a href="SID/examples/40_BM3D.html" class="image featured"><img src="SID/figures/10040_00_250_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+						  <div class="2u">
+									<a href="SID/examples/228_BM3D.html" class="image featured"><img src="SID/figures/10228_00_100_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>	
+
+						    <div class="2u">
+									<a href="SID/examples/51_BM3D.html" class="image featured"><img src="SID/figures/10051_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>	
+						    <div class="2u">
+									<a href="SID/examples/90_BM3D.html" class="image featured"><img src="SID/figures/10090_00_250_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							</div>
+					</div>		
+          </div>	
+        
+          <p align="left"><strong>Compare with the HDRNET [Gharbi et al. SIGGRAPH 2017]</strong></p>  
+					<div class="container" style="width:1200px">
+						<div class="row">
+						    <div class="2u">
+									<a href="SID/examples/30_hdr.html" class="image featured"><img src="SID/figures/10101_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							  </div>
+					
+						    <div class="2u">
+									<a href="SID/examples/163_hdr.html" class="image featured"><img src="SID/figures/10163_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+							  </div>			
+						    <div class="2u">
+									<a href="SID/examples/170_hdr.html" class="image featured"><img src="SID/figures/10170_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+                </div>				   
+            </div>		
+          </div>        
+
+          <p align="left"><strong>Compare with commercial software Adobe Camera Raw and Sony Capture One on image colors (brightness adjusted in the software for visualization)</strong></p>      
+					<div class="container" style="width:1200px">
+              <div class="row">
+						    <div class="2u">
+									<a href="SID/examples/adobe.html" class="image featured"><img src="SID/figures/10029_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+                </div>
+                <div class="2u">
+									<a href="SID/examples/capture1.html" class="image featured"><img src="SID/figures/10074_00_300_out_t.jpg" alt="" height="150px" width="50px"/></a>
+                </div>
+              </div>		
+          </div>
+
+          <p align="left"><strong>Controlled experiments (See paper for details)</strong></p>      
+					<div class="container" style="width:1200px">
+						<div class="row">
+						    <div class="2u">
+									<a href="SID/examples/pack.html" class="image featured"><img src="SID/figures/pack3_t.jpg" alt="" height="150px" width="50px"/></a>
+                </div>
+						    <div class="2u">
+									<a href="SID/examples/sRGB.html" class="image featured"><img src="SID/figures/raw_t.jpg" alt="" height="150px" width="50px"/></a>
+                </div>		   
+            </div>		
+          </div>
+          <div id="Media">
+					<h3 align="left">Media</h3>        
+          <p align="left"><strong><a href="https://boingboing.net/2018/05/09/enhance-enhance.html">See in the Dark: a machine learning technique for producing astoundingly sharp photos in very low light</a></strong><br />
+          <strong><a href="https://petapixel.com/2018/05/09/ai-is-taking-low-light-photo-quality-to-the-next-level/">AI is Taking Low-Light Photography to the Next Level</a></strong><br />
+          <strong><a href="https://gizmodo.com/deep-learning-can-now-flawlessly-correct-photos-taken-i-1825919192">Deep Learning Can Now Flawlessly Correct Photos Taken in Almost Complete Darkness</a></strong><br />
+          <strong><a href="https://www.diyphotography.net/training-ai-to-see-in-the-dark-and-take-low-light-photography-to-a-new-level/">TRAINING AI TO SEE IN THE DARK AND TAKE LOW-LIGHT PHOTOGRAPHY TO A NEW LEVEL</a></strong><br />
+          <strong><a href="https://www.digitaltrends.com/photography/see-in-the-dark-research-low-noise-ai/">A.I. could help cameras see in candlelight, research suggests</a></strong><br />
+          <strong><a href="https://www.zmescience.com/science/news-science/machine-learning-photo-correciton-043432/">Machine learning corrects photos taken in complete darkness, turns them into amazingly sharp images</a></strong><br />       
+          <strong><a href="https://thenextweb.com/artificial-intelligence/2018/05/14/this-neural-network-can-turn-pitch-black-images-into-bright-colorful-photos/">This neural network turns pitch black images into bright colorful photos</a></strong> <br />       
+          <strong><a href="https://www.dpreview.com/videos/1559702271/researchers-use-ai-to-brighten-ultra-low-light-images-without-adding-noise">Researchers use AI to brighten ultra-low light images without adding noise</a></strong><br />   
+          <strong><a href="http://techthelead.com/ai-pitch-black-images-vibrant-photos/">AI Turns Pitch Black Images Into Vibrant Photos</a></strong><br />   
+          <strong><a href="http://www.i-programmer.info/news/192-photography-a-imaging/11802-perfect-pictures-in-almost-zero-light.html">Perfect Pictures In Almost Zero Light</a></strong><br />    
+          <strong><a href="https://www.dvhardware.net/article68835.html">AI can significantly improve quality of low-light images (video)</a></strong><br />    
+          <strong><a href="https://www.extremetech.com/computing/269156-machine-learning-works-wonders-on-low-light-images">Machine Learning Works Wonders On Low-Light Images</a></strong><br />   
+          <strong><a href="https://qz.com/1279913/artificial-intelligence-is-learning-to-see-in-the-dark/">Artificial intelligence is learning to see in the dark</a></strong><br />    
+          <strong><a href="https://kottke.org/18/06/an-ai-learned-to-see-in-the-dark">An AI learned to see in the dark</a></strong><br />             
+          <strong><a href="http://geekologie.com/2018/06/the-future-new-ai-learns-how-to-see-in-t.php">The Future: New AI Learns How To See In The Dark</a></strong><br />   
+          <strong><a href="https://medium.com/click-bait/papers-101-how-an-ai-learned-to-see-in-the-dark-d05fa1d60632">How An AI Learned To See In The Dark?</a></strong><br />             
+          <strong><a href="https://www.toutiao.com/a6553795959459938819/">(In Chinese) CVPR 2018：英特尔实验室推出在黑暗中也能清晰成像的系统</a></strong><br />
+          <strong><a href="http://www.sohu.com/a/231655005_129720">(In Chinese) CVPR 2018 | 无需额外硬件，全卷积网络让机器学习学会夜视能力</a></strong><br />   
+          <strong><a href="https://mp.weixin.qq.com/s/PxlrfYgggef1rMegEODVsg">(In Chinese) 如何让摄像头变成“暗夜之眼”？英特尔开发了一套基于FCN的成像系统</a></strong><br />     
+          <strong><a href="http://www.expreview.com/61353.html">(In Chinese) 我要这徕卡何用，AI技术能让手机、相机夜景亮如白昼</a></strong><br />
+          <strong><a href="https://shiropen.com/seamless/see-in-the-dark-intel">(In Japanese) イリノイ大学とIntel、機械学習を用いて暗い環境で撮られた画像を修正するためのデータセットと手法を発表</a></strong><br />
+          <strong><a href="https://geeksroom.com/2018/05/fotografia-red-neural/117318/">(In Spanish) Red neuronal ayuda a transformar fotos muy oscuras en imágenes estupendas</a></strong><br />  
+          <strong><a href="https://www.nemokennislink.nl/publicaties/een-virtuele-flitslamp-in-nachtfoto-s/">(In Dutch) Een virtuele flitslamp in nachtfoto’s</a></strong><br />  
+          <strong><a href="http://mlzphoto.hu/2018/05/10/dobbenetesen-hatekony-a-mi-ejjellato-zajszuro-kepessege/">(In Hungarian) Döbbenetesen hatékony a MI éjjellátó/zajszűrő képessége!</a></strong><br />           
+          </p>
+          </div>
+          
+          
+          
+			</div>
+
+
+
+	</body>
+</html>

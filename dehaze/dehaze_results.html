@@ -1,0 +1,859 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Robust Image and Video Dehazing</title>
+    
+    <style type="text/css">
+
+		.centre {
+		margin-left: auto;
+		margin-right: auto;
+		display: block
+		}
+
+	
+	
+        .small_title {
+        text-align: center;
+        color: #5FC1C9;
+        font-size: 36px;
+        font-family: Tahoma, Geneva, sans-serif;
+        }
+        .contents {
+        text-align: center;
+        color: #FFE366;
+        font-size: 18px;
+        font-family: Tahoma, Geneva, sans-serif;
+        }
+        .title {
+        text-align: center;
+        font-family: Tahoma, Geneva, sans-serif;
+        font-size: 36px;
+        color: #FFE366;
+        }
+        .descp {
+        text-align: center;
+        font-family: Tahoma, Geneva, sans-serif;
+        font-size: 16px;
+        color: #CCC;
+        }
+        .sub_title {
+        text-align: center;
+        color: #EEE;
+        font-family: Tahoma, Geneva, sans-serif;
+        font-size: 20px;
+        }
+        
+        .names {
+        font-family: Tahoma, Geneva, sans-serif;
+        font-size: 24px;
+        color: #8EBC8C;
+        }
+        .table_title {
+        font-family: Tahoma, Geneva, sans-serif;
+        color: #5FC1C9;
+        }
+        .airlight {
+        font-family: "Times New Roman", Times, serif;
+        }
+    </style>
+    
+</head>
+
+
+<body bgcolor="#505050"  link="#99FFFF" vlink="#00CCFF" alink="#99FFFF" class=" hasGoogleVoiceExt">
+
+
+<script type="text/javascript">
+    function display(target,pic)
+    {
+    
+    var image = document.getElementById(target)
+    image.src = pic ;
+    }
+</script>
+
+
+<p class="title">Robust Image and Video Dehazing with Visual Artifact Suppression via Gradient Residual Minimization</p>
+<p class="small_title">Chen Chen, Minh N. Do and Jue Wang</p>
+<p class="small_title">ECCV 2016</p>
+<p class="sub_title">&nbsp;</p>
+
+
+<p align="center">&nbsp;	</p>
+<table width="850" border="0" align="center">
+
+<p align="center">&nbsp;		</p>
+<p align="center" class="small_title">&nbsp;</p>
+<hr>
+<p align="center" class="small_title">Algorithm Analysis</p>
+
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Convergence of Algorithm 2 (image restoration)</p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/funv.png" width="640"></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">Convergence of Algorithm 2</div></td>
+</tr>
+</tbody></table>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/J1.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/J5.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/J40.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/J200.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/J500.png" width="300"></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">J at iteration 1</div></td>
+	<td><div align="center" class="descp">J at iteration 5</div></td>
+    <td><div align="center" class="descp">J at iteration 40</div></td>
+	<td><div align="center" class="descp">J at iteration 200</div></td>
+    <td><div align="center" class="descp">J at iteration 500</div></td>
+</tr>
+
+<tbody><tr>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/E1.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/E5.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/E40.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/E200.png" width="300"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/E500.png" width="300"></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">E at iteration 1</div></td>
+	<td><div align="center" class="descp">E at iteration 5</div></td>
+    <td><div align="center" class="descp">E at iteration 40</div></td>
+	<td><div align="center" class="descp">E at iteration 200</div></td>
+    <td><div align="center" class="descp">E at iteration 500</div></td>
+</tr>
+
+
+
+
+
+<p align="center">&nbsp;	</p>
+<table width="850" border="0" align="center">
+
+<p align="center">&nbsp;		</p>
+<p align="center" class="small_title">&nbsp;</p>
+<hr>
+<p align="center" class="small_title">Videos</p>
+
+
+<video class='centre' width="1280" height="720" controls>
+<source src="./Videos/tower.mp4" type="video/mp4">
+</video>
+<p>&nbsp;</p>
+<video class='centre' width="1800" controls>
+<source src="./Videos/beach.mp4" type="video/mp4">
+</video>
+<p>&nbsp;</p>
+<video class='centre' width="960" height="540" controls>
+<source src="./Videos/bali.mp4" type="video/mp4">
+</video>
+<p>&nbsp;</p>
+<video class='centre' width="1024" height="576" controls>
+<source src="./Videos/port.mp4" type="video/mp4">
+</video>
+	
+	
+	
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+<p align="center">&nbsp;	</p>
+<table width="850" border="0" align="center">
+
+<p align="center">&nbsp;		</p>
+<p align="center" class="small_title">&nbsp;</p>
+<hr>
+<p align="center" class="small_title">Images</p>
+
+
+<table width="850" border="0" align="center">
+    <tbody><tr>
+            <td height="66" align="center"><span class="sub_title">Instructions: click on thumbnail images to view them next to our result. Click on the result image to view it at full resolution. </span></td>
+        </tr>
+        
+</tbody></table>
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Tower  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.3)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/input.png" width="640" img="img" id="Tower"></div></td>
+<td><div align="center"><img src="./Results/Tower_gamma1.3/ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/input.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/input.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/He11.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/He11.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/He11_trans.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/He11_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/Li14.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Li14.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/Galdran14.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Galdran14.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp"><p>input</p></div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">He 11 trans.</div></td>
+                <td><div align="center" class="descp">Li 14</div></td>
+                <td><div align="center" class="descp">Galdran 15</div></td>
+            </tr>
+            <tr>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/Meng13.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Meng13.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/Meng13_trans.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Meng13_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/Photoshop15.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Photoshop15.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/Ours_trans.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/Ours_E.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Ours_E.png&#39;)"></div></td>
+                
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Meng 13</div></td>
+                <td><div align="center" class="descp">Meng 13 trans.</div></td>
+                <td><div align="center" class="descp">Photoshop 15</div></td>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>				
+    </tr> 
+	<tr>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/He11_70.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/He11_70.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/He11_50.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/He11_50.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/tower_PS50.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/tower_PS50.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/tower_PS30.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/tower_PS30.png&#39;)"></div></td>  
+<td><div align="center"><img src="./Results/Tower_gamma1.3/Ours_noG.png" width="200" onclick="display(&#39;Tower&#39;,&#39;./Results/Tower_gamma1.3/Ours_noG.png&#39;)"></div></td>				
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">He 11 (remove 70% haze)</div></td>
+                <td><div align="center" class="descp">He 11 (remove 50% haze)</div></td>
+                <td><div align="center" class="descp">Photoshop 15 (remove 50% haze)</div></td>
+                <td><div align="center" class="descp">Photoshop 15 (remove 30% haze)</div></td>
+				<td><div align="center" class="descp">Ours (without GRM)</div></td>
+    </tr>
+	
+	
+	
+	
+	</tbody></table>
+    
+    <table border="0" align="center">
+        <tbody>
+            <tr>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/zoomininput.png" width="250"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/zoominHe11.png" width="250"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/zoominLi14.png" width="250"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/zoominGaldran14.png" width="250"></div></td>
+          
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Zoom-in input</div></td>
+                <td><div align="center" class="descp">Zoom-in He 11</div></td>
+                <td><div align="center" class="descp">Zoom-in Li 14</div></td>
+                <td><div align="center" class="descp">Zoom-in Galdran 15</div></td>
+            </tr>
+			<tr>
+           
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/zoominMeng13.png" width="250"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/zoominPhotoshop15.png" width="250"></div></td>
+                <td><div align="center"><img src="./Results/Tower_gamma1.3/zoominOurs.png" width="250"></div></td>
+				<td><div align="center"><img src="./Results/Tower_gamma1.3/zoominOurs_noG.png" width="250"></div></td>
+            </tr>
+            <tr>
+
+                <td><div align="center" class="descp">Zoom-in Meng 13</div></td>
+                <td><div align="center" class="descp">Zoom-in Photoshop 15</div></td>
+                <td><div align="center" class="descp">Zoom-in Ours</div></td>
+				<td><div align="center" class="descp">Zoom-in Ours (without GRM)</div></td>
+            </tr>
+            
+    </tbody></table>
+</div>
+
+<p>&nbsp;</p>
+<p align="center" class="names">Beach  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.5)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/beach_gamma1.3/input.png" width="640" img="img" id="Beach"></div></td>
+<td><div align="center"><img src="./Results/beach_gamma1.3/Ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+            <td><div align="center"><img src="./Results/beach_gamma1.3/input.png" width="200" onclick="display(&#39;Beach&#39;,&#39;./Results/beach_gamma1.3/input.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/beach_gamma1.3/He11.png" width="200" onclick="display(&#39;Beach&#39;,&#39;./Results/beach_gamma1.3/He11.png&#39;)"></div></td>
+                   <td><div align="center"><img src="./Results/beach_gamma1.3/Meng13.png" width="200" onclick="display(&#39;Beach&#39;,&#39;./Results/beach_gamma1.3/Meng13.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/beach_gamma1.3/Li14.png" width="200" onclick="display(&#39;Beach&#39;,&#39;./Results/beach_gamma1.3/Li14.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/beach_gamma1.3/Galdran14.png" width="200" onclick="display(&#39;Beach&#39;,&#39;./Results/beach_gamma1.3/Galdran14.png&#39;)"></div></td>
+        </tr>
+        <tr>
+            <td><div align="center" class="descp"><p>input</p></div></td>
+            <td><div align="center" class="descp">He 11</div></td>
+            <td><div align="center" class="descp">Meng 13</div></td>
+            <td><div align="center" class="descp">Li 14</div></td>
+            <td><div align="center" class="descp">Galdran 15</div></td>
+        </tr>
+        
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/beach_gamma1.3/Ours_trans.png" width="200" onclick="display(&#39;Beach&#39;,&#39;./Results/beach_gamma1.3/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/beach_gamma1.3/Ours_E.png" width="200" onclick="display(&#39;Beach&#39;,&#39;./Results/beach_gamma1.3/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+    </tbody></table>
+</div>
+
+
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Mountain  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.5)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Mountain_1.5/input.png" width="640" img="img" id="Mountain"></div></td>
+<td><div align="center"><img src="./Results/Mountain_1.5/ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+            <td><div align="center"><img src="./Results/Mountain_1.5/input.png" width="200" onclick="display(&#39;Mountain&#39;,&#39;./Results/Mountain_1.5/input.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/Mountain_1.5/He11.png" width="200" onclick="display(&#39;Mountain&#39;,&#39;./Results/Mountain_1.5/He11.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/Mountain_1.5/He11_trans.png" width="200" onclick="display(&#39;Mountain&#39;,&#39;./Results/Mountain_1.5/He11_trans.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/Mountain_1.5/Li14.png" width="200" onclick="display(&#39;Mountain&#39;,&#39;./Results/Mountain_1.5/Li14.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/Mountain_1.5/Galdran14.png" width="200" onclick="display(&#39;Mountain&#39;,&#39;./Results/Mountain_1.5/Galdran14.png&#39;)"></div></td>
+        </tr>
+        <tr>
+            <td><div align="center" class="descp"><p>input</p></div></td>
+            <td><div align="center" class="descp">He 11</div></td>
+            <td><div align="center" class="descp">He 11 trans.</div></td>
+            <td><div align="center" class="descp">Li 14</div></td>
+            <td><div align="center" class="descp">Galdran 15</div></td>
+        </tr>
+        
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/Mountain_1.5/Ours_trans.png" width="200" onclick="display(&#39;Mountain&#39;,&#39;./Results/Mountain_1.5/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Mountain_1.5/Ours_E.png" width="200" onclick="display(&#39;Mountain&#39;,&#39;./Results/Mountain_1.5/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+    </tbody></table>
+</div>
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Building  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.5)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/building_gamma1.5/input.png" width="640" img="img" id="Building"></div></td>
+<td><div align="center"><img src="./Results/building_gamma1.5/ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+            <td><div align="center"><img src="./Results/building_gamma1.5/input.png" width="200" onclick="display(&#39;Building&#39;,&#39;./Results/building_gamma1.5/input.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/building_gamma1.5/He11.png" width="200" onclick="display(&#39;Building&#39;,&#39;./Results/building_gamma1.5/He11.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/building_gamma1.5/Li14.png" width="200" onclick="display(&#39;Building&#39;,&#39;./Results/building_gamma1.5/Li14.png&#39;)"></div></td>
+            <td><div align="center"><img src="./Results/building_gamma1.5/Galdran14.png" width="200" onclick="display(&#39;Building&#39;,&#39;./Results/building_gamma1.5/Galdran14.png&#39;)"></div></td>
+        </tr>
+        <tr>
+            <td><div align="center" class="descp"><p>input</p></div></td>
+            <td><div align="center" class="descp">He 11</div></td>
+            <td><div align="center" class="descp">Li 14</div></td>
+            <td><div align="center" class="descp">Galdran 15</div></td>
+        </tr>
+        
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/building_gamma1.5/Ours_trans.png" width="200" onclick="display(&#39;Building&#39;,&#39;./Results/building_gamma1.5/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/building_gamma1.5/Ours_E.png" width="200" onclick="display(&#39;Building&#39;,&#39;./Results/building_gamma1.5/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+    </tbody></table>
+</div>
+
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Boat  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.2)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Boat_gamma1.2/input.png" width="640" img="img" id="Boat"></div></td>
+<td><div align="center"><img src="./Results/Boat_gamma1.2/ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/Boat_gamma1.2/input.png" width="200" onclick="display(&#39;Boat&#39;,&#39;./Results/Boat_gamma1.2/input.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Boat_gamma1.2/He11.png" width="200" onclick="display(&#39;Boat&#39;,&#39;./Results/Boat_gamma1.2/He11.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Boat_gamma1.2/Ours_trans.png" width="200" onclick="display(&#39;Boat&#39;,&#39;./Results/Boat_gamma1.2/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Boat_gamma1.2/Ours_E.png" width="200" onclick="display(&#39;Boat&#39;,&#39;./Results/Boat_gamma1.2/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp"><p>input</p></div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+            
+            
+            
+    </tbody></table>
+    
+    <table border="0" align="center">
+        <tbody>
+            <tr>
+                <td><div align="center"><img src="./Results/Boat_gamma1.2/zoomininput.png" width="400"></div></td>
+                <td><div align="center"><img src="./Results/Boat_gamma1.2/zoominHe11.png" width="400"></div></td>
+                <td><div align="center"><img src="./Results/Boat_gamma1.2/zoominOurs.png" width="400"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Zoom-in input</div></td>
+                <td><div align="center" class="descp">Zoom-in He 11</div></td>
+                <td><div align="center" class="descp">Zoom-in Ours</div></td>
+            </tr>
+            
+    </tbody></table>
+    
+</div>
+
+<p>&nbsp;</p>
+<p align="center" class="names">City  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.5)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/city_gamma1.5/input.png" width="640" img="img" id="City"></div></td>
+<td><div align="center"><img src="./Results/city_gamma1.5/ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/city_gamma1.5/input.png" width="200" onclick="display(&#39;City&#39;,&#39;./Results/city_gamma1.5/input.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/city_gamma1.5/He11.png" width="200" onclick="display(&#39;City&#39;,&#39;./Results/city_gamma1.5/He11.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/city_gamma1.5/Meng13.png" width="200" onclick="display(&#39;City&#39;,&#39;./Results/city_gamma1.5/Meng13.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/city_gamma1.5/Li14.png" width="200" onclick="display(&#39;City&#39;,&#39;./Results/city_gamma1.5/Li14.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/city_gamma1.5/Galdran14.png" width="200" onclick="display(&#39;City&#39;,&#39;./Results/city_gamma1.5/Galdran14.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp"><p>input</p></div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">Meng 13</div></td>
+                <td><div align="center" class="descp">Li 14</div></td>
+                <td><div align="center" class="descp">Galdran 15</div></td>
+            </tr>
+            
+            <tr>
+                <td><div align="center"><img src="./Results/city_gamma1.5/Ours_trans.png" width="200" onclick="display(&#39;City&#39;,&#39;./Results/city_gamma1.5/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/city_gamma1.5/Ours_E.png" width="200" onclick="display(&#39;City&#39;,&#39;./Results/city_gamma1.5/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+    </tbody></table>
+</div>
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Sea  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.5)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Sea_gamma1.5/input.png" width="640" img="img" id="Sea"></div></td>
+<td><div align="center"><img src="./Results/Sea_gamma1.5/ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/input.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/input.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/He11.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/He11.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/He11_trans.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/He11_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/Li14.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/Li14.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/Galdran14.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/Galdran14.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp"><p>input</p></div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">He 11 trans.</div></td>
+                <td><div align="center" class="descp">Li 14</div></td>
+                <td><div align="center" class="descp">Galdran 15</div></td>
+            </tr>
+            <tr>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/Meng13.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/Meng13.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/Meng13_trans.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/Meng13_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/Ours_trans.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Sea_gamma1.5/Ours_E.png" width="200" onclick="display(&#39;Sea&#39;,&#39;./Results/Sea_gamma1.5/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Meng 13</div></td>
+                <td><div align="center" class="descp">Meng 13 trans.</div></td>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+    </tbody></table>
+</div>
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Ferry </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.5)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Ship_gamma1.5/input.png" width="640" img="img" id="Ship"></div></td>
+<td><div align="center"><img src="./Results/Ship_gamma1.5/ours.png" width="640"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/input.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/input.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/He11.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/He11.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/He11_trans.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/He11_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/Li14.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/Li14.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/Galdran14.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/Galdran14.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp"><p>input</p></div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">He 11 trans.</div></td>
+                <td><div align="center" class="descp">Li 14</div></td>
+                <td><div align="center" class="descp">Galdran 15</div></td>
+            </tr>
+            
+            <tr>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/Meng13.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/Meng13.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/Meng13_trans.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/Meng13_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/Ours_trans.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/Ours_E.png" width="200" onclick="display(&#39;Ship&#39;,&#39;./Results/Ship_gamma1.5/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Meng 13</div></td>
+                <td><div align="center" class="descp">Meng 13 trans.</div></td>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+    </tbody></table>
+    
+    <table border="0" align="center">
+        <tbody>
+            <tr>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/zoomininput.png" width="300"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/zoominHe11.png" width="300"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/zoominMeng13.png" width="300"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/zoominLi14.png" width="300"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/zoominGaldran14.png" width="300"></div></td>
+                <td><div align="center"><img src="./Results/Ship_gamma1.5/zoominOurs.png" width="300"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Zoom-in input</div></td>
+                <td><div align="center" class="descp">Zoom-in He 11</div></td>
+                <td><div align="center" class="descp">Zoom-in Meng 13</div></td>
+                <td><div align="center" class="descp">Zoom-in Li 14</div></td>
+                <td><div align="center" class="descp">Zoom-in Galdran 15</div></td>
+                <td><div align="center" class="descp">Zoom-in Ours</div></td>
+            </tr>
+            
+    </tbody></table>
+    
+    
+</div>
+
+
+
+
+<p class="sub_title">&nbsp;</p>
+<p align="center" class="names">Swans</p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1.5)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Swans_gamma1.5/input.png" width="624" img="img" id="swan"></div></td>
+<td><div align="center"><img src="./Results/Swans_gamma1.5/Ours.png" width="624"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    &lt;
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/input.png" width="200" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/input.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/Tan08.png" width="200" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/Tan08.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/He09.png" width="200" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/He09.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/kratz09.png" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/kratz09.png&#39;)" width="200"></div></td>
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/nishino12.png" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/nishino12.png&#39;)" width="200"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">input</div></td>
+                <td><div align="center" class="descp">Tan 08</div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">Kratz 09</div></td>
+                <td><div align="center" class="descp">Nishino 12</div></td>
+            </tr>
+            <tr>
+                
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/Fattal14.png" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/Fattal14.png&#39;)" width="200"></div></td>
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/Fattal14_trans.png" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/Fattal14_trans.png&#39;)" width="200"></div></td>
+                <td><div align="center"><img src="./Results/Swans_gamma1.5/Ours_trans.png" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/Ours_trans.png&#39;)" width="200"></div></td>
+                <td><img src="./Results/Swans_gamma1.5/Ours_E.png" onclick="display(&#39;swan&#39;,&#39;./Results/Swans_gamma1.5/Ours_E.png&#39;)" width="200"></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Fattal 14</div></td>
+                <td><div align="center" class="descp">Fattal 14 trans.</div></td>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+                <td>&nbsp;</td>
+            </tr>
+    </tbody></table>
+</div>
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Pairs  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/Pairs/input.jpg" width="430" img="img" id="Pairs"></div></td>
+<td><div align="center"><img src="./Results/Pairs/ours.png" width="430"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/Pairs/input.jpg" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/input.jpg&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Pairs/He11.jpg" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/He11.jpg&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Pairs/He11_trans.png" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/He11_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Pairs/Fattal14.jpg" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/Fattal14.jpg&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Pairs/Galdran14.jpg" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/Galdran14.jpg&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp"><p>input</p></div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">He 11 trans.</div></td>
+                <td><div align="center" class="descp">Fattal 14</div></td>
+                <td><div align="center" class="descp">Galdran 15</div></td>
+            </tr>
+            <tr>
+                <td><div align="center"><img src="./Results/Pairs/Nishino12.jpg" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/Nishino12.jpg&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Pairs/Li14.png" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/Li14.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Pairs/Ours_trans.png" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/Pairs/Ours_E.png" width="200" onclick="display(&#39;Pairs&#39;,&#39;./Results/Pairs/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Nishino 12</div></td>
+                <td><div align="center" class="descp">Li 14</div></td>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+            
+            
+    </tbody></table>
+</div>
+
+
+<p>&nbsp;</p>
+<p align="center" class="names">Bali  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1)</span></p>
+
+<table border="0" align="center">
+<tbody><tr>
+<td><div align="center"><img src="./Results/bali/input.png" width="600" img="img" id="Bali"></div></td>
+<td><div align="center"><img src="./Results/bali/ours.png" width="600"></a></div></td>
+</tr>
+<tr>
+    <td><div align="center" class="descp">(click below)</div></td>
+    <td><div align="center" class="descp">Ours</div></td>
+</tr>
+</tbody></table>
+<div align="center">
+    <table width="800" border="0">
+        <tbody><tr>
+                <td><div align="center"><img src="./Results/bali/input.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/input.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/bali/He11.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/He11.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/bali/He11_trans.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/He11_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/bali/Galdran14.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/Galdran14.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/bali/Li14.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/Li14.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp"><p>input</p></div></td>
+                <td><div align="center" class="descp">He 11</div></td>
+                <td><div align="center" class="descp">He 11 trans.</div></td>
+                <td><div align="center" class="descp">Galdran 15</div></td>
+                <td><div align="center" class="descp">Li 14</div></td>
+            </tr>
+            <tr>
+                <td><div align="center"><img src="./Results/bali/Li15.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/Li15.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/bali/Li15_depth.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/Li15_depth.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/bali/Ours_trans.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/Ours_trans.png&#39;)"></div></td>
+                <td><div align="center"><img src="./Results/bali/Ours_E.png" width="200" onclick="display(&#39;Bali&#39;,&#39;./Results/bali/Ours_E.png&#39;)"></div></td>
+            </tr>
+            <tr>
+                <td><div align="center" class="descp">Li 15</div></td>
+                <td><div align="center" class="descp">Li 15 depth</div></td>
+                <td><div align="center" class="descp">Our trans.</div></td>
+                <td><div align="center" class="descp">Our E*10</div></td>
+            </tr>
+            
+            
+    </tbody></table>
+</div>
+
+
+<p align="center">&nbsp;	</p>
+<table width="850" border="0" align="center">
+
+<p align="center">&nbsp;		</p>
+<p align="center" class="small_title">&nbsp;</p>
+<hr>
+<p align="center" class="small_title">Quantitative Evaluation</p>
+
+<p>&nbsp;</p>
+<p align="center" class="names">Cones  </p>
+<p align="center" class="descp"> <span class="airlight">(gamma=1)</span></p>
+
+<tr>
+<td><div align="center"><img src="./Results/Cones/image077.png" width="400" img="img" id="Cones"></div></td>
+</tr>
+<tr>
+<td><div align="center" class="descp">Ground-truth</div></td>
+</tr>
+
+<table border="0" align="center">
+<tbody>
+<tr>
+
+<td><div align="center"><img src="./Results/Cones/He11_MSE13.6.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/Li14_MSE8.9.png" width="400"></div></td>
+<td><div align="center"><img src="./Results/Cones/Ours_MSE8.0.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/imhaze0.8.png" width="400" img="img" id="Cones"></div></td>
+</tr>
+<tr>
+	<td><div align="center" class="descp">He 11 (MSE = 0.0136)</div></td>
+	<td><div align="center" class="descp">Li 14 (MSE = 0.0089)</div></td>
+    <td><div align="center" class="descp">Ours (MSE = 0.0080)</div></td>
+	    <td><div align="center" class="descp">Input</div></td>
+</tr>
+
+<tr>
+<td><div align="center"><img src="./Results/Cones/He11_trans_MSE8.7.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/Li14_trans_MSE5.8.png" width="400"></div></td>
+<td><div align="center"><img src="./Results/Cones/Ours_trans_MSE5.6.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/trans_gt.png" width="400"></a></div></td>
+</tr>
+<tr>
+
+	<td><div align="center" class="descp">He 11 trans.(MSE = 0.0086)</div></td>
+	<td><div align="center" class="descp">Li 14 trans.(MSE = 0.0058)</div></td>
+    <td><div align="center" class="descp">Ours trans. (MSE = 0.0056)</div></td>
+	<td><div align="center" class="descp">Ground-truth trans.</div></td>
+</tr>
+
+
+
+<tr>
+<td><div align="center"><img src="./Results/Cones/He11_NC.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/Li14_NC.png" width="400"></div></td>
+<td><div align="center"><img src="./Results/Cones/Ours_NC.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/077com.jpg" width="400" img="img" id="Cones"></div></td>
+</tr>
+<tr>
+	<td><div align="center" class="descp">He 11 (MSE = 0.0129)</div></td>
+	<td><div align="center" class="descp">Li 14 (MSE = 0.0089)</div></td>
+    <td><div align="center" class="descp">Ours (MSE = 0.0071)</div></td>
+	<td><div align="center" class="descp">Compressed and noisy input</div></td>
+</tr>
+
+<tr>
+<td><div align="center"><img src="./Results/Cones/He11_trans_NC.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/Li14_trans_NC.png" width="400"></div></td>
+<td><div align="center"><img src="./Results/Cones/Ours_trans_NC.png" width="400"></a></div></td>
+<td><div align="center"><img src="./Results/Cones/trans_gt.png" width="400" img="img" id="Cones"></div></td>
+</tr>
+<tr>
+	<td><div align="center" class="descp">He 11 trans. (MSE = 0.0081)</div></td>
+	<td><div align="center" class="descp">Li 14 trans. (MSE = 0.0056)</div></td>
+    <td><div align="center" class="descp">Ours trans. (MSE = 0.0052)</div></td>
+	<td><div align="center" class="descp">Ground-truth trans.</div></td>
+</tr>
+
+
+</tbody></table>
+
+
+</td></tr></tbody></table></div></div></body></html>
